@@ -17,4 +17,15 @@ function getQuery(actualPage) {
 
 }
 
+export const getQueryForDetail = (heroId) => {
+    let now = Date.now()
+    let hash = setToM5(now + PRIVATE_KEY + PUBLIC_KEY)
+
+    return `/${heroId}?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${now}&limit=${MAX_ITEMS}`
+}
+
+export const getImageUrl = (path,extension) => {
+    return `${path}/standard_medium.${extension}`
+}
+
 export default getQuery

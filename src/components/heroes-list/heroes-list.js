@@ -1,7 +1,7 @@
 import { Hero } from "../hero-item/hero"
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { fetchHeroesList } from "../../redux/actions"
+import { fetchHeroesList } from "../../redux/actions/heroesListActions"
 
 
 const HeroesList = ({ dispatch, loading, heroes, hasErrors, page }) => {
@@ -18,7 +18,6 @@ const HeroesList = ({ dispatch, loading, heroes, hasErrors, page }) => {
   
     return (
       <section>
-        <h1>Heroes</h1>
         {renderHeroes()}
       </section>
     )

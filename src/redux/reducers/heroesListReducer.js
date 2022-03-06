@@ -1,30 +1,14 @@
-import {combineReducers} from 'redux'
-import * as actions from './actions'
+import * as actions from '../actions/heroesListActions'
 
 let initialState = {
     page: 1,
     loading: true,
     hasErrors: false,
     heroes: [],
-    selectedHero: {
-        hero: {}
-    }
-}
-
-let selectHeroReducer = (initState = initialState, action) => {
-    switch(action.type) {
-        case 'SELECT_HERO':
-            return action.hero
-        case 'UNSELECT_HERO':
-            return initState
-        default:
-            return initState
-    }
 }
 
 
-
-let loadHeroesListReducer = (state = initialState, action) => {
+export const loadHeroesListReducer = (state = initialState, action) => {
     switch(action.type) {
         case actions.GET_HEROES: 
             return {...state, 
@@ -42,8 +26,3 @@ let loadHeroesListReducer = (state = initialState, action) => {
             return state
     }
 }
-
-let rootReducer = combineReducers({
-    loadHeroes: loadHeroesListReducer
-})
-export default rootReducer
