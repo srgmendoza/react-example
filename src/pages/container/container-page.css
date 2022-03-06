@@ -1,0 +1,7 @@
+.ContainerPage {
+    display: flex;
+    flex-direction: row;
+    background-color: #282c34;
+    color: white;
+    justify-content: space-around;
+}
